@@ -10,7 +10,7 @@ public class UsersRepository
 
         using (var connection = new SqlConnection(connectionString))
         {
-            IEnumerable<User> queryResult = connection.Query<User>($"SELECT [FirstName], [LastName] FROM dbo.[Users] WHERE Id={id}");
+            IEnumerable<User> queryResult = connection.Query<User>($"SELECT [Id], [FirstName], [LastName] FROM dbo.[Users] WHERE Id={id}");
             return queryResult.ToList().FirstOrDefault();
         }
     }

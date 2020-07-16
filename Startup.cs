@@ -29,7 +29,7 @@ namespace Kurs
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.MapGet("/users", async context =>
                 {
                     int userId = 0;
                     if (!Int32.TryParse(context.Request.Query["Id"], out userId))
