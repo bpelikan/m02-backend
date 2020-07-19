@@ -14,5 +14,5 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  condition: eq(Agent.Name,'Hosted Agent') # targets the result of the previous job 
+  condition: eq($(Agent.Name),'Hosted Agent') 
   displayName: 'dotnet build $(buildConfiguration)'
